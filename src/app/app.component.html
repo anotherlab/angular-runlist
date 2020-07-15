@@ -11,15 +11,15 @@
 </div>
 <br/>
 <div *ngFor="let item of locations;let i = index;">
-	<div class="accordion" (click)="toggleAccordian($event, i)" style="background-color:red;">
-		<div style="background-color:#dbfcff;">
-			<div (click)="toggleAccordian($event, i)">
+	<div class="accordion" (click)="toggleAccordian($event, i)" style="background-color:red;padding: 0 0 0 8px;">
+
+			<div (click)="toggleAccordian($event, i)" style="background-color:#dbfcff;">
         <span style="font-size:larger;">{{item.LocationName}}</span>
-				{{item.LocationName}} <br/>
+				<br/>
     {{item.Address}}
   </div>
 			</div>
-		</div>
+
 		<div class="panel">
 			<p *ngFor="let run of item.Runs" hide="!item.isActive">{{run.RunName}}</p>
 
