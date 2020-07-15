@@ -1,0 +1,30 @@
+<div *ngFor="let item of locations;let i = index;">
+  <button class="accordion" (click)="toggleAccordian($event, i)"> 
+<div class="rectangle"></div>    
+    {{item.LocationName}} <br/>
+    {{item.Address}} 
+    </button>
+    <div class="panel" >
+      <p *ngFor="let run of item.Runs" hide="!item.isActive">{{run.RunName}}</p>
+
+    </div>
+</div>
+<br/>
+<div *ngFor="let item of locations;let i = index;">
+  <div class="accordion" (click)="toggleAccordian($event, i)" style="background-color:red;"> 
+  <div style="background-color:blue;">
+  <div (click)="toggleAccordian($event, i)">
+    {{item.LocationName}} <br/>
+    {{item.Address}} 
+  </div>
+</div>    
+    </div>
+    <div class="panel" >
+      <p *ngFor="let run of item.Runs" hide="!item.isActive">{{run.RunName}}</p>
+
+    </div>
+</div>
+
+
+
+
